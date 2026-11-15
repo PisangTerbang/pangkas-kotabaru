@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-oxblood: #3d0f19;
+  --color-oxblood-deep: #290911;
+  --color-brass: #d9b45a;
+  --color-brass-deep: #9c7a2b;
+  --color-tile: #f5f5f3;
+  --color-ink: #1e1a1b;
+  --color-muted: #625a5c;
+  --color-line: #dcd8d5;
+  --color-felt: #1c1b1b;
+  --color-pole-red: #c4262e;
+  --color-pole-blue: #23408f;
+  --color-wa: #128c4b;
+
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Big Shoulders Display Variable", "Arial Narrow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-tile);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+}
+
+.gilded {
+  color: var(--color-brass);
+  text-shadow:
+    0 1px 0 #f4dc95,
+    0 -1px 0 var(--color-brass-deep),
+    0 6px 18px rgb(0 0 0 / 0.35);
+}
+
+.pole-stripes {
+  background: repeating-linear-gradient(
+    -38deg,
+    var(--color-pole-red) 0 22px,
+    #fff 22px 36px,
+    var(--color-pole-blue) 36px 58px,
+    #fff 58px 72px
+  );
+  position: absolute;
+  inset: 0 0 -92px 0;
+}
+.pole-glass {
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 0.35),
+    transparent 28%,
+    rgb(255 255 255 / 0.55) 42%,
+    transparent 58%,
+    rgb(0 0 0 / 0.4)
+  );
+}
+
+.felt {
+  background-color: var(--color-felt);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.035) 0 3px,
+    rgb(0 0 0 / 0.55) 3px 5px,
+    transparent 5px 12px
+  );
+}
+
+.tiles {
+  background-color: var(--color-tile);
+  background-image:
+    linear-gradient(rgb(0 0 0 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 0 0 / 0.045) 1px, transparent 1px);
+  background-size: 48px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
